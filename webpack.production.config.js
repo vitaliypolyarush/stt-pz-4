@@ -10,8 +10,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, './build'),
     publicPath: "/",
-    filename: '[id].[hash].bundle.js',
-    chunkFilename: "[id].[hash].bundle.js"
+    filename: '[id].[fullhash].bundle.js',
+    chunkFilename: "[id].[fullhash].bundle.js"
   },
   optimization: {
     minimizer: [
@@ -19,7 +19,7 @@ module.exports = {
         terserOptions: {
           compress: {
             // Drop console statements
-            drop_console: true
+            drop_console: false
           },
         }
       })
@@ -73,7 +73,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'hash=sha512&digest=hex&name=[hash].[ext]',
+              name: 'hash=sha512&digest=hex&name=[fullhash].[ext]',
               esModule: false,
             }
           },
