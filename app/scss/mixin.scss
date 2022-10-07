@@ -1,0 +1,13 @@
+@mixin theme($operator-color, $digit-color) {
+  .app-button-long {
+    background-color: var($digit-color);
+  }
+
+  .app-button-digit {
+    background-color: $digit-color;
+  }
+
+  .app-button-operator {
+    background-color: $operator-color;
+  }
+}
